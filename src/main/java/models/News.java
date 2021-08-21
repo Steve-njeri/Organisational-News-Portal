@@ -58,19 +58,4 @@ public class News {
         return Objects.hash(id, user_id, title, content);
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setPostdate(Timestamp postdate) {
-        this.postdate = postdate;
-    }
 }
