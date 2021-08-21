@@ -14,4 +14,27 @@ public class Users {
         this.departmentId = departmentId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
