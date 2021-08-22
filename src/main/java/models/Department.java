@@ -6,13 +6,11 @@ public class Department {
     private int id;
     private String name;
     private String description;
-    private int number_employees;
 
-    public Department(String name, String description, int number_employees){
-
+    public Department(int id,String name, String description){
+        this.id = id;
         this.name= name;
         this.description = description;
-        this.number_employees= number_employees;
     }
 
     public String getName() {
@@ -23,16 +21,8 @@ public class Department {
         return description;
     }
 
-    public int getNumber_employees() {
-        return number_employees;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override
@@ -42,13 +32,24 @@ public class Department {
         Department department = (Department) o;
         return id == department.id &&
                 Objects.equals(name, department.name) &&
-                Objects.equals(description, department.description) &&
-                Objects.equals(number_employees, department.number_employees);
+                Objects.equals(description, department.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, description, number_employees);
+        return Objects.hash(id, name, description);
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

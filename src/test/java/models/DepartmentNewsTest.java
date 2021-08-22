@@ -35,7 +35,7 @@ public class DepartmentNewsTest {
 
     //helper
     public DepartmentNews setupDepartmentNews() {
-        return new DepartmentNews(0012,"Sports","FA Cup, Qualification", new Timestamp(new Date().getTime()),00111);
+        return new DepartmentNews(0012,"Sports" ,"FA Cup, Qualification", new Timestamp(new Date().getTime()), 00111);
     }
 
 

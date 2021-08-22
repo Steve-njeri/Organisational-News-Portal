@@ -7,19 +7,21 @@ import models.Users;
 import java.util.List;
 
 public interface DepartmentDao {
+
+    //create
     void add(Department department);
 
-    //Get all departments
-    List<Department> getAllDepartments();
-
+    //Read
+    List<Department> getAll();
+    Department findById(int id);
+    List<DepartmentNews> getDepartmentNewsById(int id);
     List<Users> getDepartmentUsersById(int id);
 
-    List<DepartmentNews> getDepartmentNewsById(int id);
 
-    Department findDepartmentById(int id);
+    //update
+    void update(Department department, String name, String description);
 
-    void updateDepartment(Department department, String name, String description);
-
-    void clearAllDepartments();
+    //delete
+    void clearAll();
 
 }

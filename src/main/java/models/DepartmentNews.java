@@ -16,6 +16,10 @@ public class DepartmentNews extends News {
         return departmentId;
     }
 
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof News)) return false;
@@ -28,4 +32,5 @@ public class DepartmentNews extends News {
     public int hashCode() {
         return Objects.hash(super.hashCode(), departmentId);
     }
+
 }

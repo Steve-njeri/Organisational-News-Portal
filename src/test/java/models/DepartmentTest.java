@@ -17,7 +17,6 @@ public class DepartmentTest {
         Department department = setupDepartment();
         assertEquals("sales", department.getName());
         assertEquals("Marketing",department.getDescription());
-        assertEquals(40,department.getNumber_employees());
     }
 
     @Test
@@ -29,7 +28,7 @@ public class DepartmentTest {
 
     // helper
     public Department setupDepartment() {
-        return new Department("sales", "Marketing", 40);
+        return new Department(10,"sales", "Marketing");
     }
 
 }

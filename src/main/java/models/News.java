@@ -58,4 +58,7 @@ public class News {
         return Objects.hash(id, user_id, title, content);
     }
 
+    public void getUsers_id() {
+        this.id = id;
+    }
 }
