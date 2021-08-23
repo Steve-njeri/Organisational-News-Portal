@@ -1,6 +1,4 @@
 package models;
-
-import java.sql.Timestamp;
 import java.util.Objects;
 
 public class News {
@@ -8,13 +6,12 @@ public class News {
     private int user_id;
     private String title;
     private String content;
-    private Timestamp postdate;
 
-    public News(int user_id, String title, String content, Timestamp postdate) {
+    public News(int id, int user_id, String title, String content) {
+        this.id = id;
         this.user_id = user_id;
         this.title = title;
         this.content = content;
-        this.postdate = postdate;
     }
 
     public int getUser_id() {
@@ -29,14 +26,6 @@ public class News {
         return content;
     }
 
-    public Timestamp getPostdate() {
-        return postdate;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getId() {
         return id;
     }
@@ -49,8 +38,7 @@ public class News {
         return id == news.id &&
                 Objects.equals(user_id, news.user_id) &&
                 Objects.equals(title, news.title) &&
-                Objects.equals(content, news.content) &&
-                Objects.equals(postdate, news.postdate);
+                Objects.equals(content, news.content);
     }
 
     @Override
@@ -58,7 +46,15 @@ public class News {
         return Objects.hash(id, user_id, title, content);
     }
 
-    public void getUsers_id() {
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public void setid(int id) {
         this.id = id;
     }
 }

@@ -1,14 +1,11 @@
 package models;
-
-import java.sql.Timestamp;
 import java.util.Objects;
 
 public class DepartmentNews extends News {
     private int departmentId;
 
-    public DepartmentNews(int user_id, String title, String content, Timestamp postdate, int departmentId) {
-
-        super(user_id, title, content, postdate);
+    public DepartmentNews(int id, int user_id, String title, String content,int departmentId) {
+        super(id, user_id, title, content);
         this.departmentId = departmentId;
     }
 

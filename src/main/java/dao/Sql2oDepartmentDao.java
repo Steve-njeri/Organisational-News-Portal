@@ -62,36 +62,38 @@ public class Sql2oDepartmentDao implements DepartmentDao {
 
 //    update departments
     @Override
-    public void update(Department department, String name, String description) {
+    public void update(int id, String name, String description) {
         String sql = "UPDATE departments set (name, description) = (:name, :description) ";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("name", name)
                     .addParameter("description", description)
                     .executeUpdate();
-            department.setName(name);
-            department.setDescription(description);
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
     }
 
-//    Get all users by ID
+    @Override
+    public void deleteById(int id) {
+        String sql = "DELETE from departments WHERE id = :id";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+
+    }
+
+    //    Get all users by ID
     @Override
     public List<Users> getDepartmentUsersById(int id) {
         return usersDao.getAllUsers().stream()
                 .filter(users -> users.getDepartmentId()== id )
                 .collect(Collectors.toList());
     }
-
-    //    Get all DepartmentNews by ID
-    @Override
-    public List<DepartmentNews> getDepartmentNewsById(int id) {
-        return newsDao.getDepartmentNews().stream()
-                .filter(department -> department.getDepartmentId()== id)
-                .collect(Collectors.toList());
-    }
-
 
 //    clear all departments
     @Override

@@ -14,14 +14,14 @@ public interface DepartmentDao {
     //Read
     List<Department> getAll();
     Department findById(int id);
-    List<DepartmentNews> getDepartmentNewsById(int id);
     List<Users> getDepartmentUsersById(int id);
 
 
     //update
-    void update(Department department, String name, String description);
+    void update(int id, String name, String description);
 
-    //delete
+    //delete department
+    void deleteById(int id);
     void clearAll();
 
 }

@@ -21,7 +21,6 @@ public class DepartmentNewsTest {
         assertEquals(0012,departmentNews.getUser_id());
         assertEquals("Sports",departmentNews.getTitle());
         assertEquals("FA Cup, Qualification",departmentNews.getContent());
-        assertEquals(new Timestamp(new Date().getTime()),departmentNews.getPostdate());
         assertEquals(00111,departmentNews.getDepartmentId());
 
     }
@@ -29,13 +28,13 @@ public class DepartmentNewsTest {
     @Test
     public void setId() throws Exception{
         DepartmentNews departmentNews = setupDepartmentNews();
-        departmentNews.setId(7);
+        departmentNews.setid(7);
         assertNotEquals(3,departmentNews.getId());
     }
 
     //helper
     public DepartmentNews setupDepartmentNews() {
-        return new DepartmentNews(0012,"Sports" ,"FA Cup, Qualification", new Timestamp(new Date().getTime()), 00111);
+        return new DepartmentNews(1,0012,"Sports" ,"FA Cup, Qualification", 00111);
     }
 
 

@@ -1,0 +1,2 @@
+DROP DATABASE organisationals_portal_test;
+DROP DATABASE organisationals_portal;

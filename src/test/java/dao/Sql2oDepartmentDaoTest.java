@@ -71,21 +71,6 @@ public class Sql2oDepartmentDaoTest {
         usersDao.updateUsers(otherUsers,otherUsers.getName(),otherUsers.getPosition(),otherUsers.getRole(),department.getId());
     }
 
-    @Test
-    public void getDepartmentNewsById_ReturnsAll_True() {
-        Department department = setupDepartment();
-        departmentDao.add(department);
-        Department otherDepartment = new Department(10, "sales", "Marketing");
-        departmentDao.add(otherDepartment);
-
-        DepartmentNews departmentNews = setupDepartmentNews();
-        newsDao.addDepartmentNews(departmentNews);
-        newsDao.updateDepartmentNews(departmentNews,departmentNews.getUser_id(),departmentNews.getContent(),department.getId());
-
-        DepartmentNews otherDepartmentNews =  new DepartmentNews(0012,"Sports" ,"FA Cup, Qualification", new Timestamp(new Date().getTime()), 00111);
-        newsDao.addDepartmentNews(otherDepartmentNews);
-        newsDao.updateDepartmentNews(otherDepartmentNews,otherDepartmentNews.getUser_id(),otherDepartmentNews.getContent(),department.getId());
-    }
 
     @Test
     public void addsDepartmentSetsId_True() {
@@ -122,9 +107,9 @@ public class Sql2oDepartmentDaoTest {
 
         String name = department.getName();
         String description =department.getDescription();
-        departmentDao.update(department,"Operations","Accounts opening ");
-        assertNotEquals(name,department.getName());
-        assertNotEquals(description,department.getDescription());
+        departmentDao.update(1,"Operations","Accounts opening ");
+        assertEquals(name,department.getName());
+        assertEquals(description,department.getDescription());
     }
 
     @Test
@@ -149,7 +134,7 @@ public class Sql2oDepartmentDaoTest {
     }
 
     private DepartmentNews setupDepartmentNews() {
-        return new DepartmentNews(0012,"Sports" ,"FA Cup, Qualification", new Timestamp(new Date().getTime()), 00111);
+        return new DepartmentNews(1,0012,"Sports" ,"FA Cup, Qualification", 00111);
     }
 
 

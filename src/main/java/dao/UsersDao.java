@@ -8,11 +8,12 @@ public interface UsersDao {
 
     List<Users> getAllUsers();
 
-    void addUser(Users user);
+    void addUsers(Users users);
 
     Users findUserById(int id);
 
     void updateUsers(Users users, String name, String position, String role, int departmentId);
 
+    void deleteById(int id);
     void clearAllUsers();
 }

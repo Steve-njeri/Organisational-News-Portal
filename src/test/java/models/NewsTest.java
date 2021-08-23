@@ -2,9 +2,6 @@ package models;
 
 import org.junit.Test;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 import static org.junit.Assert.*;
 
 public class NewsTest {
@@ -21,19 +18,18 @@ public class NewsTest {
         assertEquals(0012,news.getUser_id());
         assertEquals("Sports",news.getTitle());
         assertEquals("FA Cup, Qualification",news.getContent());
-        assertEquals(new Timestamp(new Date().getTime()),news.getPostdate());
     }
 
     @Test
     public void setId() throws Exception{
         News news = setupNews();
-        news.setId(7);
+        news.setUser_id(7);
         assertNotEquals(3,news.getId());
     }
 
     //helper
     public News setupNews() {
-        return new News(0012,"Sports","FA Cup, Qualification", new Timestamp(new Date().getTime()));
+        return new News(1,0012,"Sports","FA Cup, Qualification");
     }
 
 }

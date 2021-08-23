@@ -1,3 +1,5 @@
+SET MODE PostgreSQL;
+
 CREATE DATABASE organisationals_portal;
 \c organisationals_portal
 
@@ -13,16 +15,15 @@ id serial PRIMARY KEY,
 name VARCHAR,
 position VARCHAR,
 role VARCHAR,
-departmentId int
+departmentId INTEGER
 );
 
 CREATE TABLE news (
 id serial PRIMARY KEY,
-userId int,
-content varchar,
-postdate timestamp,
-departmentId int,
-type varchar
+user_id INTEGER,
+title VARCHAR ,
+content VARCHAR ,
+departmentId INTEGER
 );
 
 CREATE DATABASE organisationals_portal_test WITH TEMPLATE organisationals_portal;

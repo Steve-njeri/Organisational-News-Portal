@@ -56,4 +56,20 @@ public class Users {
     public int hashCode() {
         return Objects.hash(id, name, position, role, departmentId);
     }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
